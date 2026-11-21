@@ -167,7 +167,7 @@ export default function TeamsPage() {
             <img
               src={imageUrl}
               alt={`${member.name}, ${member.role}`}
-              loading="lazy"
+
             />
           ) : (
             <div className="portrait-placeholder">
