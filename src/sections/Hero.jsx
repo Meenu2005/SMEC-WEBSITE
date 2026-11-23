@@ -1,6 +1,5 @@
 import "../App.css";
 import logo from "../assets/smeclogo.png";
-const navItems = ["Home", "Events", "Teams", "Hierarchy", "Gallery", "Contact"];
 
 function SmecEmblem() {
   return (
@@ -15,9 +14,8 @@ export default function Hero() {
   return (
     <main className="smec-page">
       <section className="smec-hero" id="home">
-        <div className="hero-building" aria-hidden="true">
-          <img src={require("../assets/hero-building.png")} alt="SMEC building" />
-        </div>        <div className="hero-vignette" aria-hidden="true" />
+        <div className="hero-building" aria-hidden="true" />
+        <div className="hero-vignette" aria-hidden="true" />
         <div className="hero-geometry geometry-left" aria-hidden="true">
           <span /><span /><span />
         </div>

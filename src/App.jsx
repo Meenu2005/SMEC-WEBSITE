@@ -6,8 +6,7 @@ import NavBar from "./sections/NavBar"
 import TeamsPage from "./sections/TeamsPage"
 import "./App.css"
 import TeamPreview from "./sections/TeamPreview"
-import "./sections/TeamPreview.jsx"
-
+import Footer from "./sections/Footer"
 function HomePage() {
   return <>
 
@@ -26,7 +25,7 @@ export default function App() {
       <Route path="/events" element={<EventsPage />} />
       <Route path="/teams" element={<TeamsPage />} />
     </Routes>
-
+    <Footer />
   </BrowserRouter>)
     ;
 }

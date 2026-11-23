@@ -492,3 +492,44 @@
     padding: 10px 0;
   }
 }
+
+/* Responsive refinements: directory controls and member profiles */
+.teams-page { padding-inline: clamp(18px, 7vw, 100px); }
+.team-directory, .team-section { min-width: 0; }
+.team-member { min-width: 0; }
+.member-content { min-width: 0; overflow-wrap: anywhere; }
+.member-portrait img { max-width: 100%; object-fit: contain; }
+@media (max-width: 760px) {
+  .teams-page { padding: 82px 22px 72px; }
+  .teams-hero h1 { font-size: clamp(48px, 11vw, 76px); line-height: 1.02; }
+  .teams-hero p { font-size: 14px; }
+  .team-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filter-field { min-width: 0; }
+  .team-search-box { min-width: 0; }
+  .team-member { grid-template-columns: minmax(120px, 34%) minmax(0, 1fr); gap: 18px; }
+  .member-portrait { min-width: 0; min-height: 170px; overflow: hidden; }
+  .member-portrait img { width: min(100%, 250px); height: auto; max-height: 260px; object-fit: contain; }
+  .portrait-placeholder { max-width: 100%; }
+}
+@media (max-width: 520px) {
+  .teams-page { padding: 72px 16px 58px; }
+  .teams-hero { margin-bottom: 34px; }
+  .teams-eyebrow, .team-section-heading > span { font-size: 9px; letter-spacing: 1.8px; }
+  .teams-hero h1 { margin: 15px 0; font-size: clamp(43px, 12vw, 60px); letter-spacing: -2px; }
+  .teams-hero p { font-size: 13px; line-height: 1.7; }
+  .team-filters { grid-template-columns: minmax(0, 1fr); padding: 13px; gap: 12px; }
+  .search-field { grid-column: auto; }
+  .directory-count { align-items: flex-start; gap: 12px; flex-direction: column; margin: 18px 2px 42px; }
+  .team-section { margin-bottom: 52px; }
+  .team-section-heading { margin-bottom: 20px; }
+  .team-section-heading h2 { font-size: clamp(30px, 9vw, 42px); letter-spacing: -1px; }
+  .team-section-heading p { font-size: 12px; }
+  .team-member { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 20px 0 28px; }
+  .member-portrait { width: 100%; min-height: 0; justify-content: center; }
+  .member-portrait img { width: min(100%, 280px); max-height: 300px; }
+  .portrait-placeholder { width: min(220px, 70vw); height: 220px; font-size: 42px; }
+  .member-content { padding: 5px 0 0; }
+  .member-role { margin-bottom: 8px; font-size: 9px; letter-spacing: 1.4px; }
+  .member-content h3 { font-size: clamp(22px, 7vw, 29px); }
+  .member-content p { font-size: 13px; line-height: 1.7; }
+}

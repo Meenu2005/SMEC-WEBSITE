@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import logo from '../assets/smeclogo.png'
 
@@ -22,8 +22,12 @@ function SmecEmblem() {
 }
 
 export default function NavBar() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const closeMenu = () => setMenuOpen(false)
+
   return (
-    <header className="smec-nav">
+    <header className={`smec-nav${menuOpen ? " menu-open" : ""}`}>
 
       <Link className="brand" to="/" aria-label="SMEC 27 home">
         <span className="brand-mark">
@@ -34,12 +38,24 @@ export default function NavBar() {
         </span>
       </Link>
 
-      <nav className="nav-links" aria-label="Main navigation">
+      <button
+        className="nav-menu-toggle"
+        type="button"
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+        aria-controls="smec-primary-navigation"
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span /><span /><span />
+      </button>
+
+      <nav id="smec-primary-navigation" className="nav-links" aria-label="Main navigation">
         {navItems.map((item) => (
           <NavLink
             to={item.path}
             end={item.end}
             key={item.name}
+            onClick={closeMenu}
             className={({ isActive }) => isActive ? "active" : ""}
           >
             {item.name}
@@ -47,7 +63,7 @@ export default function NavBar() {
         ))}
       </nav>
 
-      <Link className="nav-register" to="/#register">
+      <Link className="nav-register" to="/#register" onClick={closeMenu}>
         Register <span aria-hidden="true">↗</span>
       </Link>
 
